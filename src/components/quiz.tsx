@@ -184,7 +184,7 @@ export function Quiz() {
           <div key={key} className={animationClass}>
             <CardHeader className="text-center">
               <CardTitle className="text-3xl font-black text-primary">Você está pronto(a) para desbloquear seu máximo potencial.</CardTitle>
-              <p className="text-muted-foreground mt-2">conheça o:</p>
+              <p className="text-muted-foreground mt-2">conheça o Detox Digital: Desafio 7 Dias Sem Procrastinação</p>
             </CardHeader>
             <CardContent className="space-y-6">
               <Image 
@@ -218,8 +218,10 @@ export function Quiz() {
               </div>
             </CardContent>
             <CardFooter className="flex flex-col gap-4">
-              <Button className="w-full font-bold text-xl h-14" size="lg">
-                GARANTIR MINHA VAGA
+              <Button asChild className="w-full font-bold text-xl h-14" size="lg">
+                <a href="https://www.ggcheckout.com/checkout/v2/SVU4imKOgqOWMMQhXiTK" target="_blank" rel="noopener noreferrer">
+                  GARANTIR MINHA VAGA
+                </a>
               </Button>
               <div className="flex items-center text-sm text-muted-foreground">
                 <ShieldCheck className="h-4 w-4 mr-2 text-primary" />
