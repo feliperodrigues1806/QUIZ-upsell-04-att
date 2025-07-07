@@ -47,7 +47,7 @@ export function Quiz() {
         question1Response: "O usuário sente que seu tempo está escapando e que as redes sociais roubam sua atenção e energia.",
         question2Response: answers.q2,
         question3Response: answers.q3,
-        expertName: "Seu Especialista",
+        expertName: "Lucas Semenzato",
         upsellProductName: "Acelerador de Resultados",
       });
       setAnalysisResult(result);
@@ -150,13 +150,13 @@ export function Quiz() {
           <div key={key} className={animationClass}>
             <CardHeader className="items-center text-center">
               <Avatar className="w-24 h-24 mb-4 border-2 border-primary">
-                <AvatarImage src="https://placehold.co/150x150.png" alt="Expert" data-ai-hint="expert portrait" />
-                <AvatarFallback>E</AvatarFallback>
+                <AvatarImage src="https://i.imgur.com/sLKnHOi.png" alt="Lucas Semenzato" />
+                <AvatarFallback>LS</AvatarFallback>
               </Avatar>
-              <CardTitle className="text-2xl font-bold">Prazer, sou Seu Especialista!</CardTitle>
+              <CardTitle className="text-2xl font-bold">Prazer, sou Lucas Semenzato!</CardTitle>
             </CardHeader>
             <CardContent className="text-center">
-              <p>Há anos ajudo pessoas comuns a retomarem o controle do tempo, cortando o mal pela raiz: o vício digital.</p>
+              <p>Há 9 anos ajudo pessoas comuns a retomarem o controle do tempo, cortando o mal pela raiz: o vício digital.</p>
               <p className="font-semibold text-primary mt-4">O Detox Digital é o seu atalho para liberdade, foco e produtividade real.</p>
             </CardContent>
             <CardFooter>
