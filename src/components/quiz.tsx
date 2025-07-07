@@ -74,17 +74,25 @@ export function Quiz() {
         return (
           <div key={key} className={animationClass}>
             <CardHeader className="items-center text-center">
-              <CheckCircle className="h-12 w-12 text-primary mb-4" />
-              <CardTitle className="text-2xl font-bold">Seu acesso já foi enviado!</CardTitle>
-              <CardDescription>Verifique seu e-mail para começar agora mesmo o Detox Digital.</CardDescription>
+              <Badge variant="outline" className="border-primary text-primary mb-3">Bônus Exclusivo</Badge>
+              <CardTitle className="text-2xl font-bold">Parabéns! Sua vaga no Desafio “Durma igual um Bebê em 7 Dias” está confirmada!</CardTitle>
+              <CardDescription className="!mt-3">Verifique seu e-mail agora mesmo: seu acesso ao desafio exclusivo já foi enviado.</CardDescription>
             </CardHeader>
-            <CardContent className="text-center">
-              <p className="font-semibold">Já pensou em cortar pela raiz o maior inimigo do seu tempo?</p>
-              <p className="text-sm text-muted-foreground mt-2">Responda 3 perguntas rápidas e desbloqueie uma oferta exclusiva para acelerar ainda mais sua transformação.</p>
+            <CardContent className="text-center space-y-4">
+              <div className="bg-secondary/30 p-4 rounded-lg border border-secondary text-left space-y-2">
+                <p className="font-bold text-lg">🎁 Presente para você:</p>
+                <p className="text-muted-foreground">Como novo participante, você ganhou acesso a uma <span className="font-bold text-primary">Consultoria Digital Gratuita</span> (diagnóstico personalizado para acelerar seu resultado).</p>
+              </div>
+              <div className="!mt-6 space-y-2">
+                <p className="font-semibold">Descubra em menos de 2 minutos onde está o maior inimigo do seu tempo – e como cortar pela raiz!</p>
+                <p className="text-sm text-muted-foreground">Responda 3 perguntas rápidas e desbloqueie seu diagnóstico VIP gratuito.</p>
+                <p className="text-xs text-muted-foreground/70 pt-2">(Oferta liberada só nesta página para alunos do desafio.)</p>
+              </div>
             </CardContent>
             <CardFooter>
               <Button className="w-full font-bold text-lg" size="lg" onClick={() => setStep(1)}>
-                Continuar <ArrowRight className="ml-2" />
+                Quero minha consultoria gratuita
+                <ArrowRight className="ml-2" />
               </Button>
             </CardFooter>
           </div>
