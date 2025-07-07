@@ -8,7 +8,6 @@ import { personalizedUpsellAnalysis, type PersonalizedUpsellAnalysisOutput } fro
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useToast } from '@/hooks/use-toast';
 import { ProductivityChart } from '@/components/productivity-chart';
 import { Badge } from './ui/badge';
@@ -148,12 +147,18 @@ export function Quiz() {
       case 4:
         return (
           <div key={key} className={animationClass}>
-            <CardHeader className="items-center text-center">
-              <Avatar className="w-24 h-24 mb-4 border-2 border-primary">
-                <AvatarImage src="https://i.imgur.com/sLKnHOi.png" alt="Lucas Semenzato" />
-                <AvatarFallback>LS</AvatarFallback>
-              </Avatar>
-              <CardTitle className="text-2xl font-bold">Prazer, sou Lucas Semenzato!</CardTitle>
+            <CardHeader className="p-0 text-center">
+              <Image
+                src="https://i.imgur.com/sLKnHOi.png"
+                alt="Lucas Semenzato"
+                width={1536}
+                height={1024}
+                className="w-full h-auto rounded-t-lg"
+                data-ai-hint="man portrait"
+              />
+              <div className="p-6">
+                <CardTitle className="text-2xl font-bold">Prazer, sou Lucas Semenzato!</CardTitle>
+              </div>
             </CardHeader>
             <CardContent className="text-center">
               <p>Há 9 anos ajudo pessoas comuns a retomarem o controle do tempo, cortando o mal pela raiz: o vício digital.</p>
@@ -179,8 +184,17 @@ export function Quiz() {
           <div key={key} className={animationClass}>
             <CardHeader className="text-center">
               <CardTitle className="text-3xl font-black text-primary">Você está pronto(a) para desbloquear seu máximo potencial.</CardTitle>
+              <p className="text-muted-foreground mt-2">conheça o:</p>
             </CardHeader>
             <CardContent className="space-y-6">
+              <Image 
+                src="https://i.imgur.com/CPhsV7O.png" 
+                alt="Acelerador de Resultados" 
+                width={956} 
+                height={148}
+                className="w-full h-auto"
+                data-ai-hint="logo text"
+              />
               <div className="bg-secondary/30 p-4 rounded-lg border border-secondary">
                   <h3 className="font-bold mb-2 flex items-center"><CornerDownRight className="w-4 h-4 mr-2 text-primary"/> Sua Análise Personalizada:</h3>
                   <p className="text-muted-foreground">{analysisResult?.analysis}</p>
