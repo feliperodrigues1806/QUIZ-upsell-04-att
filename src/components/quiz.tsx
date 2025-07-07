@@ -101,11 +101,10 @@ export function Quiz() {
         return (
           <div key={key} className={animationClass}>
             <CardHeader className="text-center">
-              <CardTitle className="text-2xl font-bold">Você sente que seu tempo está sempre escapando pelos dedos?</CardTitle>
+              <CardTitle className="text-2xl font-bold">Você sente que seu tempo está sempre escapando pelos dedos, e as redes sociais roubam sua atenção e energia?</CardTitle>
             </CardHeader>
             <CardContent className="text-center">
-                <p className="text-lg">... e que as redes sociais roubam sua atenção e energia?</p>
-                <p className="text-sm text-muted-foreground mt-4">Se respondeu sim, saiba: o Detox Digital é o primeiro passo para explodir sua produtividade.</p>
+                <p className="text-lg text-muted-foreground">Se isso acontece com você, sua rotina está desorganizada. Bora descobrir como resolver isso?</p>
             </CardContent>
             <CardFooter>
               <Button className="w-full font-bold text-lg" size="lg" onClick={() => setStep(2)}>
