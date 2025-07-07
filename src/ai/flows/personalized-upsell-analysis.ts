@@ -33,21 +33,27 @@ const prompt = ai.definePrompt({
   name: 'personalizedUpsellAnalysisPrompt',
   input: {schema: PersonalizedUpsellAnalysisInputSchema},
   output: {schema: PersonalizedUpsellAnalysisOutputSchema},
-  prompt: `Based on the user's responses to the following questions, create a personalized analysis highlighting how the {{upsellProductName}} can address their specific pain points.\
+  prompt: `You are a helpful assistant. Your task is to generate a personalized analysis and a list of benefits for an upsell product based on a user's quiz answers.
 
+Generate the 'analysis' field with the following text. Do not change it, just output it as is, but replace {{upsellProductName}} with the value from the input. Preserve the paragraph breaks.
+---
+Eu sei exatamente como você se sente: aquela sensação de que o tempo está escapando, enquanto as redes sociais e as notificações roubam sua atenção — e você termina o dia com a impressão de que não fez nada do que realmente importa. Você já tentou de tudo para se livrar desse ciclo de procrastinação, mas as distrações sempre voltam?
+
+Foi por isso que criei o {{upsellProductName}}. Este desafio é feito para pessoas como você, que estão cansadas de promessas vazias e querem uma solução prática, direta e de resultado rápido para tomar de volta o controle do tempo e da própria vida.
+
+Durante 7 dias, você terá um método comprovado para eliminar as distrações, focar no que realmente importa e transformar sua produtividade. Imagine acordar leve, com clareza mental, energia renovada e a satisfação de ver seu tempo sendo usado no que realmente te faz evoluir. É isso que o {{upsellProductName}} vai entregar para você: foco, liberdade e a versão mais produtiva de si mesmo(a).
+
+Pronto para dar o primeiro passo?
+---
+
+Now, based on the user's answers below, generate exactly 3 benefits for the 'benefits' field. The benefits should be tailored to their specific pain points, be encouraging, and motivate them to purchase.
+
+User's quiz answers:
 Question 1 Response: {{{question1Response}}}
 Question 2 Response: {{{question2Response}}}
 Question 3 Response: {{{question3Response}}}
 
-Expert Name: {{{expertName}}}
 Upsell Product Name: {{{upsellProductName}}}
-
-Instructions:
-1.  Acknowledge the user's struggles based on their responses.
-2.  Explain how the {{upsellProductName}} directly addresses those struggles.
-3.  Highlight the key benefits they will experience, such as more time, less distractions, and increased focus.
-4.  Keep the tone encouraging and motivating, positioning the upsell as the perfect solution to their problems.
-5. Generate 3 benefits for the user.\
 `,
 });
 

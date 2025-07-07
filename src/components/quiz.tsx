@@ -47,7 +47,7 @@ export function Quiz() {
         question2Response: answers.q2,
         question3Response: answers.q3,
         expertName: "Lucas Semenzato",
-        upsellProductName: "Acelerador de Resultados",
+        upsellProductName: "Detox Digital: Desafio 7 Dias sem Procrastinação",
       });
       setAnalysisResult(result);
       setStep(6);
@@ -189,7 +189,7 @@ export function Quiz() {
             <CardContent className="space-y-6">
               <Image 
                 src="https://i.imgur.com/CPhsV7O.png" 
-                alt="Acelerador de Resultados" 
+                alt="Detox Digital: Desafio 7 Dias sem Procrastinação" 
                 width={956} 
                 height={148}
                 className="w-full h-auto"
@@ -197,10 +197,10 @@ export function Quiz() {
               />
               <div className="bg-secondary/30 p-4 rounded-lg border border-secondary">
                   <h3 className="font-bold mb-2 flex items-center"><CornerDownRight className="w-4 h-4 mr-2 text-primary"/> Sua Análise Personalizada:</h3>
-                  <p className="text-muted-foreground">{analysisResult?.analysis}</p>
+                  <p className="text-muted-foreground whitespace-pre-wrap">{analysisResult?.analysis}</p>
               </div>
               <div className="space-y-2">
-                <h3 className="font-bold">Com o Acelerador de Resultados, você vai:</h3>
+                <h3 className="font-bold">Com o Detox Digital: Desafio 7 Dias sem Procrastinação, você vai:</h3>
                 <ul className="space-y-2">
                   {analysisResult?.benefits.map((benefit, i) => (
                     <li key={i} className="flex items-start">
@@ -213,7 +213,7 @@ export function Quiz() {
               <ProductivityChart />
               <div className="text-center p-4 bg-primary/10 rounded-lg">
                 <Badge variant="destructive" className="mb-2 text-base animate-pulse">Oferta Relâmpago!</Badge>
-                <p className="text-2xl font-bold">Adicione o <span className="text-primary">Acelerador de Resultados</span> com 50% OFF!</p>
+                <p className="text-2xl font-bold">Adicione o <span className="text-primary">Detox Digital: Desafio 7 Dias sem Procrastinação</span> com 50% OFF!</p>
                 <p className="text-muted-foreground">Exclusivo para novos alunos.</p>
               </div>
             </CardContent>
