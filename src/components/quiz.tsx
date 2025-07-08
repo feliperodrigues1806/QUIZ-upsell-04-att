@@ -3,7 +3,6 @@
 import { useState, useMemo } from 'react';
 import Image from 'next/image';
 import { Loader2, CheckCircle, ShieldCheck, ArrowRight, CornerDownRight } from 'lucide-react';
-import { personalizedUpsellAnalysis, type PersonalizedUpsellAnalysisOutput } from '@/ai/flows/personalized-upsell-analysis';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -17,11 +16,18 @@ type Answers = {
   q3: string;
 };
 
+const staticAnalysis = "Eu sei exatamente como você se sente: aquela sensação de que o tempo está escapando, enquanto as redes sociais e as notificações roubam sua atenção — e você termina o dia com a impressão de que não fez nada do que realmente importa. Você já tentou de tudo para se livrar desse ciclo de procrastinação, mas as distrações sempre voltam?\n\nFoi por isso que criei o Detox Digital: Desafio 7 Dias Sem Procrastinação. Este desafio é feito para pessoas como você, que estão cansadas de promessas vazias e querem uma solução prática, direta e de resultado rápido para tomar de volta o controle do tempo e da própria vida.\n\nDurante 7 dias, você terá um método comprovado para eliminar as distrações, focar no que realmente importa e transformar sua produtividade. Imagine acordar leve, com clareza mental, energia renovada e a satisfação de ver seu tempo sendo usado no que realmente te faz evoluir. É isso que o Detox Digital vai entregar para você: foco, liberdade e a versão mais produtiva de si mesmo(a).\n\nPronto para dar o primeiro passo?";
+
+const staticBenefits = [
+    "Reconquistar o controle total do seu tempo e atenção, eliminando as distrações que te impedem de progredir.",
+    "Desenvolver um foco inabalável para realizar suas tarefas mais importantes com o dobro da eficiência e sem esforço.",
+    "Transformar sua rotina e acordar com mais energia, clareza mental e a satisfação de estar no comando da sua vida."
+];
+
 export function Quiz() {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Answers>({ q2: '', q3: '' });
   const [isLoading, setIsLoading] = useState(false);
-  const [analysisResult, setAnalysisResult] = useState<PersonalizedUpsellAnalysisOutput | null>(null);
   const { toast } = useToast();
 
   const progress = useMemo(() => {
@@ -37,31 +43,15 @@ export function Quiz() {
     setStep((prev) => prev + 1);
   };
 
-  const handleGetAnalysis = async () => {
+  const handleGetAnalysis = () => {
     setIsLoading(true);
     setStep(5); // Go to loading screen
 
-    try {
-      const result = await personalizedUpsellAnalysis({
-        question1Response: "O usuário sente que seu tempo está escapando e que as redes sociais roubam sua atenção e energia.",
-        question2Response: answers.q2,
-        question3Response: answers.q3,
-        expertName: "Marcos Semenzato",
-        upsellProductName: "Detox Digital: Desafio 7 Dias sem Procrastinação",
-      });
-      setAnalysisResult(result);
-      setStep(6);
-    } catch (e) {
-      console.error(e);
-      toast({
-        title: "Ocorreu um erro",
-        description: "Não foi possível gerar sua análise. Por favor, tente novamente.",
-        variant: "destructive",
-      });
-      setStep(4); // Go back to expert screen
-    } finally {
-      setIsLoading(false);
-    }
+    // Simulate a short delay to make the loading screen visible
+    setTimeout(() => {
+        setIsLoading(false);
+        setStep(6);
+    }, 1500);
   };
 
   const renderStep = () => {
@@ -165,8 +155,8 @@ export function Quiz() {
               <p className="font-semibold text-primary mt-4">O Detox Digital é o seu atalho para liberdade, foco e produtividade real.</p>
             </CardContent>
             <CardFooter>
-              <Button className="w-full font-bold text-lg" size="lg" onClick={handleGetAnalysis}>
-                Ver minha análise
+              <Button className="w-full font-bold text-lg" size="lg" onClick={handleGetAnalysis} disabled={isLoading}>
+                {isLoading ? <Loader2 className="animate-spin" /> : "Ver minha análise"}
               </Button>
             </CardFooter>
           </div>
@@ -197,12 +187,12 @@ export function Quiz() {
               />
               <div className="bg-secondary/30 p-4 rounded-lg border border-secondary">
                   <h3 className="font-bold mb-2 flex items-center"><CornerDownRight className="w-4 h-4 mr-2 text-primary"/> Sua Análise Personalizada:</h3>
-                  <p className="text-muted-foreground whitespace-pre-wrap">{analysisResult?.analysis}</p>
+                  <p className="text-muted-foreground whitespace-pre-wrap">{staticAnalysis}</p>
               </div>
               <div className="space-y-2">
                 <h3 className="font-bold">Com o Detox Digital: Desafio 7 Dias sem Procrastinação, você vai:</h3>
                 <ul className="space-y-2">
-                  {analysisResult?.benefits.map((benefit, i) => (
+                  {staticBenefits.map((benefit, i) => (
                     <li key={i} className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-primary mr-2 mt-0.5 shrink-0" />
                       <span>{benefit}</span>
