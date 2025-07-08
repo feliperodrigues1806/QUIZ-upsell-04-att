@@ -46,7 +46,7 @@ export function Quiz() {
         question1Response: "O usuário sente que seu tempo está escapando e que as redes sociais roubam sua atenção e energia.",
         question2Response: answers.q2,
         question3Response: answers.q3,
-        expertName: "Lucas Semenzato",
+        expertName: "Marcos Semenzato",
         upsellProductName: "Detox Digital: Desafio 7 Dias sem Procrastinação",
       });
       setAnalysisResult(result);
@@ -150,14 +150,14 @@ export function Quiz() {
             <CardHeader className="p-0 text-center">
               <Image
                 src="https://i.imgur.com/sLKnHOi.png"
-                alt="Lucas Semenzato"
+                alt="Marcos Semenzato"
                 width={1536}
                 height={1024}
                 className="w-full h-auto rounded-t-lg"
                 data-ai-hint="man portrait"
               />
               <div className="p-6">
-                <CardTitle className="text-2xl font-bold">Prazer, sou Lucas Semenzato!</CardTitle>
+                <CardTitle className="text-2xl font-bold">Prazer, sou Marcos Semenzato!</CardTitle>
               </div>
             </CardHeader>
             <CardContent className="text-center">
