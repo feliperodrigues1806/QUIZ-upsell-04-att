@@ -10,7 +10,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription }
 import { Progress } from '@/components/ui/progress';
 import { useToast } from '@/hooks/use-toast';
 import { ProductivityChart } from '@/components/productivity-chart';
-import { Badge } from './ui/badge';
+import { Badge } from '@/components/ui/badge';
 
 type Answers = {
   q2: string;
